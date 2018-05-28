@@ -39,3 +39,20 @@ exports.get_search_data = function(start,end,keyword){
 		req_obj.end();
 	}
 }
+
+
+// 获取首页本地json模拟数据
+exports.get_index_data = function(){
+	var content = fs.readFileSync('./mock/home.json','utf-8');
+	return content;
+}
+
+// 排名
+
+// 类目
+
+// 书籍  根据id
+
+// 男频
+
+// 女频

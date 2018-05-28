@@ -37,7 +37,7 @@ app.use(controller.get('/api_test',function*(){
 	this.body = service.get_test_data();
 }));
 
-// 异步请求后端接口数据  127.0.0.1:3000/ajax/search?keyword=123&start=2&end=5
+// 异步请求后端接口数据(线上)  127.0.0.1:3000/ajax/search?keyword=123&start=2&end=5
 app.use(controller.get('/ajax/search',function*(){
 	this.set('Cache-Control','no-cache');
 	var querystring = require('querystring');
@@ -47,3 +47,10 @@ app.use(controller.get('/ajax/search',function*(){
 	var keyword = params.keyword;
 	this.body = yield service.get_search_data(start,end,keyword);
 }));
+// 数据获取另一种方案：获取本地模拟数据 **.json
+
+app.use(controller.get('/ajax/index',function*(){
+	this.set('Cache-Control','no-cache');
+	this.body = service.get_index_data();
+}));
+
