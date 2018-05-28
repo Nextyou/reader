@@ -57,7 +57,7 @@ app.use(controller.get('/ajax/index',function*(){
 // 首页
 app.use(controller.get('/',function*(){
 	this.set('Cache-Control','no-cache');
-	this.body = yield render('test',{title:'书城首页'});
+	this.body = yield render('index',{title:'书城首页'});
 }));
 
 
