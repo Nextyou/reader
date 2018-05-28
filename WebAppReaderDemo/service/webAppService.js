@@ -5,7 +5,7 @@ exports.get_test_data = function(){
 	return content;
 }
 
-// 获取服务器数据
+// 获取服务器数据，搜索数据是根据线上api获得，其他通过本地模拟数据
 exports.get_search_data = function(start,end,keyword){
 	return function(cb){
 		var http = require('http');
@@ -46,12 +46,12 @@ exports.get_index_data = function(){
 	var content = fs.readFileSync('./mock/home.json','utf-8');
 	return content;
 }
-
+// TODO
 // 排名
 
 // 类目
 
-// 书籍  根据id
+// 书籍  根据id  参数处理
 
 // 男频
 

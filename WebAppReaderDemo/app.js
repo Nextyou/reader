@@ -54,3 +54,20 @@ app.use(controller.get('/ajax/index',function*(){
 	this.body = service.get_index_data();
 }));
 
+// 首页
+app.use(controller.get('/',function*(){
+	this.set('Cache-Control','no-cache');
+	this.body = yield render('test',{title:'书城首页'});
+}));
+
+
+// TODO
+// 排名
+
+// 类目
+
+// 书籍  根据id  参数处理
+
+// 男频
+
+// 女频
